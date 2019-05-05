@@ -1,10 +1,26 @@
-const blankLine = '  |   |  ';
-const guessLine = '1 |   |  ';
-const bombLine = '  | B |  ';
+let board = [
+    [' ', ' ', ' ',],
+    [' ', ' ', ' ',], 
+    [' ', ' ', ' ',]
+];
+
+const printBoard = board =>  
+{
+    console.log("Current Board: ");
+    //console.log(board[0] + "\n" + board[1] + "\n" + board[2]);
+    
+    console.log(board[0].join(" | "));
+    console.log(board[1].join(" | "));
+    console.log(board[2].join(" | "));
+}
+//const multiplyES6 = (x, y) => { return x * y };
+
+printBoard(board);
+
+board[0][1] = '1';
+board[2][2] = 'B';
+
+printBoard(board);
 
 
 
-console.log('This is what an empty board would look like:');
-console.log(blankLine + "\n" + blankLine + "\n" + blankLine);
-console.log('This is what a board with a guess and a bomb on it would look like:');
-console.log(guessLine + "\n" + bombLine + "\n" + blankLine);
